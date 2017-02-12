@@ -65,8 +65,8 @@ is a way to make it extensible moving forward we should.
 ----------------
 Setup
 ----------------
-The was original generated with Ruby 2.2.5 and Rails 5.0.1.
-There is an ebenv file for ruby 2.2.5 along with an rbenv gemset file.
+This was original generated with Ruby 2.2.5 and Rails 5.0.1.
+There is an rbenv file for ruby 2.2.5 along with an rbenv gemset file.
 
 ----------------
 Test Data
