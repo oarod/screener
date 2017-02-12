@@ -99,6 +99,6 @@ The easiest way to submit would be to:
 1. Fork the project.
 2. Complete as much as possible
 3. Make sure the forked repo is up to date
-4. Send a email to jobs@allegorylaw noting its complete.
+4. Send a email to jobs@allegorylaw noting its complete with the forked url.
 
 Again we appreciate the time your taking to try this.
