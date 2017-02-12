@@ -91,4 +91,14 @@ Questions
 If you run into any quesions that are not covered in this README, please
 email jobs@allegorylaw.com and someone will respond to your questions.
 
+----------------
+Submittal
+----------------
+
+The easiest way to submit would be to:
+1. Fork the project.
+2. Complete as much as possible
+3. Make sure the forked repo is up to date
+4. Send a email to jobs@allegorylaw noting its complete.
+
 Again we appreciate the time your taking to try this.
