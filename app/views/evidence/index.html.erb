@@ -1,0 +1,20 @@
+<div>
+  <%= form_tag(evidence_index_path, remote: true, method: :get,
+               class: 'form-inline', id: 'evidence-filter',
+               data: {type: :html}) do %>
+    <%= select_tag :category, options_for_select(%w(Email Document Transcript)),
+      include_blank: true, class: 'form-control' %>
+    <%= submit_tag 'Filter', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<table id="evidence" class="table table-striped">
+  <thead>
+    <th>Id</th>
+    <th>Identifer</th>
+    <th>Title</th>
+    <th>Filed At</th>
+    <th>Category</th>
+  </thead>
+  <%= render partial: 'table_body', locals: { evidence: @evidence } %>
+</table>
