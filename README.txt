@@ -101,4 +101,15 @@ The easiest way to submit would be to:
 3. Make sure the forked repo is up to date
 4. Send a email to jobs@allegorylaw noting its complete with the forked url.
 
+--------------------------------
+Time frame & next steps
+--------------------------------
+
+We normally give about a full week from when the time you recieve the email
+with a link to the project
+
+Once we receive an email that your repository is updated and your project
+complete our engineering team will review it within a week.  At that point
+expect an email back from us on whether we would like to move forward.
+
 Again we appreciate the time your taking to try this.
