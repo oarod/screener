@@ -1,70 +1,10 @@
 <% case category
    when 'Email' %>
-   <thead>
-     <th>Identifer</th>
-     <th>Title</th>
-     <th>Page 1 Summary</th>
-   </thead>
-   <tbody>
-     <% evidence.each do |ev| %>
-       <tr>
-         <td><%= ev.identifier %></td>
-         <td><%= ev.title %></td>
-         <td><%= ev.pages.first.text[0..11] << '...' %></td>
-       </tr>
-     <% end %>
-   </tbody>
+   <%= render 'email', evidence: evidence %>
 <% when 'Document' %>
-   <thead>
-     <th>Id</th>
-     <th>Identifer</th>
-     <th>Title</th>
-     <th>Name of Person</th>
-     <th>Page 1 Summary</th>
-   </thead>
-   <tbody>
-     <% evidence.each do |ev| %>
-       <tr>
-         <td><%= ev.id %></td>
-         <td><%= ev.identifier %></td>
-         <td><%= ev.title %></td>
-         <td><%= ev.person.name if ev.person.present? %></td>
-         <td><%= ev.pages.first.text[0..11] << "..." %></td>
-       </tr>
-     <% end %>
-   </tbody>
+   <%= render 'document', evidence: evidence %>
 <% when 'Transcript' %>
-  <thead>
-    <th>Identifer</th>
-    <th>Title</th>
-    <th>Name of Person</th>
-  </thead>
-  <tbody>
-    <% evidence.each do |ev| %>
-      <tr>
-        <td><%= ev.identifier %></td>
-        <td><%= ev.title %></td>
-        <td><%= ev.person.name if ev.person.present? %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <%= render 'transcript', evidence: evidence %>
 <% else %>
-  <thead>
-    <th>Id</th>
-    <th>Identifer</th>
-    <th>Title</th>
-    <th>Filed At</th>
-    <th>Category</th>
-  </thead>
-  <tbody>
-    <% evidence.each do |ev| %>
-      <tr>
-        <td><%= ev.id %></td>
-        <td><%= ev.identifier %></td>
-        <td><%= ev.title %></td>
-        <td><%= ev.filed_at %></td>
-        <td><%= ev.category %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <%= render 'default', evidence: evidence %>
 <% end %>

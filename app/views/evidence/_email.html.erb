@@ -1,0 +1,14 @@
+<thead>
+  <th>Identifer</th>
+  <th>Title</th>
+  <th>Page 1 Summary</th>
+</thead>
+<tbody>
+  <% evidence.each do |ev| %>
+    <tr>
+      <td><%= ev.identifier %></td>
+      <td><%= ev.title %></td>
+      <td><%= ev.pages.first.text[0..11] << '...' %></td>
+    </tr>
+  <% end %>
+</tbody>
