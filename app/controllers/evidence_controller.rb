@@ -7,7 +7,7 @@ class EvidenceController < ApplicationController
     end
 
     if request.xhr?
-      render "_table_body", locals: {evidence: @evidence}, layout: false
+      render "_table_body", locals: {evidence: @evidence, category: params[:category] }, layout: false
     else
       render "index"
     end
