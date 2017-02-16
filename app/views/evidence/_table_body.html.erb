@@ -1,11 +1,10 @@
-<tbody>
-  <% evidence.each do |ev| %>
-    <tr>
-      <td><%= ev.id %></td>
-      <td><%= ev.identifier %></td>
-      <td><%= ev.title %></td>
-      <td><%= ev.filed_at %></td>
-      <td><%= ev.category %></td>
-    </tr>
-  <% end %>
-</tbody>
+<% case category
+   when 'Email' %>
+   <%= render 'email', evidence: evidence %>
+<% when 'Document' %>
+   <%= render 'document', evidence: evidence %>
+<% when 'Transcript' %>
+  <%= render 'transcript', evidence: evidence %>
+<% else %>
+  <%= render 'default', evidence: evidence %>
+<% end %>

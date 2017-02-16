@@ -1,0 +1,18 @@
+<thead>
+  <th>Id</th>
+  <th>Identifer</th>
+  <th>Title</th>
+  <th>Filed At</th>
+  <th>Category</th>
+</thead>
+<tbody>
+  <% evidence.each do |ev| %>
+    <tr>
+      <td><%= ev.id %></td>
+      <td><%= ev.identifier %></td>
+      <td><%= ev.title %></td>
+      <td><%= ev.filed_at %></td>
+      <td><%= ev.category %></td>
+    </tr>
+  <% end %>
+</tbody>
