@@ -1,21 +1,18 @@
 class EvidenceController < ApplicationController
-  def index
-    if category == "all"
-      @evidence = Evidence.all
-    else
-      @evidence = Evidence.for_category(category)
-    end
+  before_action :set_category
 
-    if request.xhr?
-      render "_table_body", locals: {evidence: @evidence, category: params[:category] }, layout: false
-    else
-      render "index"
-    end
+  def index
+    @evidence =
+      if @category.present?
+        Evidence.for_category(@category)
+      else
+        Evidence.all
+      end
   end
 
   private
 
-  def category
-    params["category"].blank? ? "all" : params["category"]
+  def set_category
+    @category = params[:category].present? ? params[:category] : nil
   end
 end

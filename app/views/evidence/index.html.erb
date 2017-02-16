@@ -1,12 +1,20 @@
 <div>
-  <%= form_tag(evidence_index_path, remote: true, method: :get,
-               class: 'form-inline', id: 'evidence-filter',
-               data: {type: :html}) do %>
-    <%= select_tag :category, options_for_select(%w(Email Document Transcript)),
-      include_blank: true, class: 'form-control' %>
-    <%= submit_tag 'Filter', class: 'btn btn-primary' %>
-  <% end %>
+  <ul class="nav nav-pills">
+    <li class="<%= 'active' if @category == nil %>"><%= link_to 'No Filter', evidence_index_path %></li>
+    <% %w(Email Document Transcript).each do |category| %>
+      <li class="<%= 'active' if @category == category %>"><%= link_to category, evidence_index_path(category: category) %></li>
+    <% end %>
+  </ul>
 </div>
 <table id="evidence" class="table table-striped">
-  <%= render partial: 'table_body', locals: { evidence: @evidence, category: params[:category] } %>
+  <% case @category
+     when 'Email' %>
+     <%= render 'email', evidence: @evidence %>
+  <% when 'Document' %>
+     <%= render 'document', evidence: @evidence %>
+  <% when 'Transcript' %>
+    <%= render 'transcript', evidence: @evidence %>
+  <% else %>
+    <%= render 'default', evidence: @evidence %>
+  <% end %>
 </table>
