@@ -1,14 +1,5 @@
-<thead>
-  <th>Identifer</th>
-  <th>Title</th>
-  <th>Name of Person</th>
-</thead>
-<tbody>
-  <% evidence.each do |ev| %>
-    <tr>
-      <td><%= ev.identifier %></td>
-      <td><%= ev.title %></td>
-      <td><%= ev.person.name if ev.person.present? %></td>
-    </tr>
-  <% end %>
-</tbody>
+<%= grid @evidence_grid do |g|
+  g.column name: 'Identifier', attribute: 'identifier'
+  g.column name: 'Title', attribute: 'title'
+  g.column name: 'Name of Person', attribute: 'name', assoc: :person
+end %>

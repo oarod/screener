@@ -12,6 +12,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
+gem 'wice_grid', git: 'git@github.com:leikind/wice_grid.git', branch: 'rails3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -1,4 +1,4 @@
-<div>
+<div class="form-group">
   <ul class="nav nav-pills">
     <li class="<%= 'active' if @category == nil %>"><%= link_to 'No Filter', evidence_index_path %></li>
     <% %w(Email Document Transcript).each do |category| %>
@@ -6,15 +6,8 @@
     <% end %>
   </ul>
 </div>
-<table id="evidence" class="table table-striped">
-  <% case @category
-     when 'Email' %>
-     <%= render 'email', evidence: @evidence %>
-  <% when 'Document' %>
-     <%= render 'document', evidence: @evidence %>
-  <% when 'Transcript' %>
-    <%= render 'transcript', evidence: @evidence %>
-  <% else %>
-    <%= render 'default', evidence: @evidence %>
-  <% end %>
-</table>
+<% if @category.present? %>
+  <%= render @category.downcase, evidence_grid: @evidence_grid %>
+<% else %>
+  <%= render "default", evidence_grid: @evidence_grid %>
+<% end %>
