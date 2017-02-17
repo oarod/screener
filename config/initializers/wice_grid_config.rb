@@ -25,7 +25,7 @@ if defined?(Wice::Defaults)
   Wice::Defaults::ALLOW_MULTIPLE_SELECTION = true
 
   # Show the upper pagination panel by default or not
-  Wice::Defaults::SHOW_UPPER_PAGINATION_PANEL = false
+  Wice::Defaults::SHOW_UPPER_PAGINATION_PANEL = true
 
   # Disabling CSV export by default
   Wice::Defaults::ENABLE_EXPORT_TO_CSV = false
@@ -40,7 +40,7 @@ if defined?(Wice::Defaults)
   # * <tt>:when_filtered</tt> - when the table is the result of filtering
   # * <tt>:always</tt>        - show the filter always
   # * <tt>:no</tt>            - never show the filter
-  Wice::Defaults::SHOW_FILTER = :always
+  Wice::Defaults::SHOW_FILTER = :no
 
   # A boolean value specifying if a change in a filter triggers reloading of the grid.
   Wice::Defaults::AUTO_RELOAD = false

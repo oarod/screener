@@ -1,18 +1,8 @@
-<thead>
-  <th>Id</th>
-  <th>Identifer</th>
-  <th>Title</th>
-  <th>Name of Person</th>
-  <th>Page 1 Summary</th>
-</thead>
-<tbody>
-  <% evidence.each do |ev| %>
-    <tr>
-      <td><%= ev.id %></td>
-      <td><%= ev.identifier %></td>
-      <td><%= ev.title %></td>
-      <td><%= ev.person.name if ev.person.present? %></td>
-      <td><%= ev.pages.first.text[0..11] << "..." %></td>
-    </tr>
-  <% end %>
-</tbody>
+<%= grid @evidence_grid do |g|
+  g.column name: 'Identifier', attribute: 'identifier'
+  g.column name: 'Title', attribute: 'title'
+  g.column name: 'Name of Person', attribute: 'name', assoc: :person
+  g.column name: 'Page 1 Summary', attribute: 'text', assoc: :pages do |evidence|
+    page_one_summary evidence
+  end
+end %>
